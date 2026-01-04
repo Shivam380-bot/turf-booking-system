@@ -1,0 +1,82 @@
+.presence-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* LEFT SIDE (IMAGE AREA) */
+/* LEFT SIDE WITH BACKGROUND IMAGE */
+.presence-left {
+  width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("../assets/bg-pattern.jpeg"); /* 👈 yahan apni image ka path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay for better contrast */
+.presence-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* darkness level */
+  z-index: 1;
+}
+
+/* India Map stays on top */
+.presence-left img {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  max-width: 420px;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
+}
+
+
+/* RIGHT SIDE (CONTENT) */
+.presence-right {
+  width: 50%;
+  background: linear-gradient(135deg, #2bb673, #1f8f5c);
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.presence-right h2 {
+  font-size: 56px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.presence-right p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #eafff3;
+  max-width: 520px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .presence-wrapper {
+    flex-direction: column;
+  }
+
+  .presence-left,
+  .presence-right {
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .presence-right h2 {
+    font-size: 36px;
+  }
+}

@@ -1,0 +1,235 @@
+.navbar {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 60px;
+
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+
+.navbar.show {
+  top: 0;                    /*  THIS WAS MISSING */
+  background: rgba(0, 0, 0, 0.9);
+}
+
+
+.book-btn {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+}
+.navbar.show .book-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/*left section */
+
+/* Grass Image */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -1px;   /* 👈 yahin se upar shift hoga */
+}
+
+
+
+.logo-img {
+  width: 150px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  font-style: italic;
+    position: relative;
+  top: -55px; 
+}
+
+.logo-text span {
+  color: #3cff00;
+}
+
+
+/*rigth section*/
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;   /* 🔥 THIS IS THE KEY */
+}
+
+
+/* BOOK BUTTON */
+.book-btn {
+  padding: 20px 40px;
+  border-radius: 50px;
+  background: #2ecc71;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.4s ease;
+   margin-right: 10px;
+   gap: 8px;
+}
+
+.navbar.show .book-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* TEXT stays fixed */
+.btn-text {
+  position: relative;
+  z-index: 4;
+}
+
+/* ICON moves */
+.btn-icon {
+  position: absolute;
+  left: -40px;         /* start outside */
+  font-size: 20px;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+/* HOVER EFFECT */
+.book-btn:hover .btn-icon {
+  left: calc(100% - 1px);   /* move fully to right */
+}
+.book-btn:hover .btn-text {
+  transform: translateX(-10px);
+}
+
+/* MENU ICON */
+.menu-icon {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: white;
+  margin: 6px 0;
+}
+
+/* ---------------- SLIDE MENU ---------------- */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: #0b0b0bed;
+  color: white;
+  padding: 80px 30px;
+  transition: 0.4s ease;
+  z-index: 2000;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  font-size: 22px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+/* CLOSE ICON */
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 28px;
+  cursor: pointer;
+   z-index: 3000;
+}
+
+/* menu keh style */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.popup-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.login-btn {
+  background: #1db954;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.switch-link {
+  margin-top: 10px;
+  color: #1db954;
+  cursor: pointer;
+}
+
+
+
+
+

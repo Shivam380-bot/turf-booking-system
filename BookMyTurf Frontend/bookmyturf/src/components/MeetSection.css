@@ -1,0 +1,55 @@
+.meet-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 80px;
+  min-height: 100vh;
+
+  /* Background Image */
+  background-image: url("../assets/bg-pattern.jpeg");  /* 👈 apni image ka path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* dark overlay effect */
+  position: relative;
+}
+
+.meet-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 25, 20, 0.9),
+    rgba(5, 25, 20, 0.6)
+  );
+  z-index: 1;
+}
+
+/* content on top of overlay */
+.meet-content,
+.meet-image {
+  position: relative;
+  z-index: 2;
+}
+
+/* TEXT STYLE */
+.meet-content h2 {
+  font-size: 52px;
+  color: #6aff6a;
+  margin-bottom: 20px;
+}
+
+.meet-content p {
+  font-size: 18px;
+  color: #e2e2e2;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* IMAGE */
+.meet-image img {
+  width: 420px;
+  max-width: 100%;
+}

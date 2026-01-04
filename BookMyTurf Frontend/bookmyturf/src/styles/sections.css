@@ -1,0 +1,32 @@
+/* =============================
+   COMMON BACKGROUND FOR SECTIONS
+============================== */
+
+.section-bg {
+  background: linear-gradient(
+      135deg,
+      rgba(8, 20, 30, 0.95),
+      rgba(20, 60, 40, 0.95)
+    ),
+    url("/assets/bg-pattern.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 120px 80px;
+}
+
+
+/* Smooth section separation */
+.section-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(0,255,150,0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* Keep content above background */
+.section-bg > * {
+  position: relative;
+  z-index: 2;
+}
